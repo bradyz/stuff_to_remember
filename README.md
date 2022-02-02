@@ -28,3 +28,28 @@ rsync -avz --info=progress2 $SRC $DST
 ## Chrome
 
 * Delete from suggestion bar `ctrl+shift+delete`
+
+## VSCode `launch.json`
+
+```
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "cwd": "/PATH/TO/WORK_DIR",
+            "justMyCode": false,
+            "env": {
+                "FOO": "BAR",
+            },
+            "args": [
+                 "foo", "bar",
+            ]
+        }
+    ]
+}
+```
