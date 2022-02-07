@@ -53,3 +53,9 @@ rsync -avz --info=progress2 $SRC $DST
     ]
 }
 ```
+
+## SSH and tmux
+
+```
+ssh -XC USER@hHOST -t 'tmux new-session -A -s TMUX_ID'
+```
