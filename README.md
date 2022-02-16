@@ -73,3 +73,9 @@ conda env export --name NAME --no-builds | grep -v "prefix" > environment.yml
 conda env update --file environment.yml --prune
 conda env update --name NAME --file environment.yml --prune
 ```
+
+## Soft Links
+
+```
+ln -s SRC DST
+```
