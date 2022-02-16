@@ -59,3 +59,17 @@ rsync -avz --info=progress2 $SRC $DST
 ```
 ssh -XC USER@hHOST -t 'tmux new-session -A -s TMUX_ID'
 ```
+
+## Conda
+
+```
+conda create --name NAME python=3.9
+
+conda env create --name NAME --file=environments.yml
+
+conda env export --no-builds | grep -v "prefix" > environment.yml
+conda env export --name NAME --no-builds | grep -v "prefix" > environment.yml
+
+conda env update --file environment.yml --prune
+conda env update --name NAME --file environment.yml --prune
+```
