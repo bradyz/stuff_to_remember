@@ -83,3 +83,85 @@ conda env update --name NAME --file environment.yml --prune
 ```bash
 ln -s SRC DST
 ```
+
+## google drive
+
+```
+gdown --id ID
+```
+
+If it has too much traffic, try https://stackoverflow.com/questions/65312867/how-to-download-large-file-from-google-drive-from-terminal-gdown-doesnt-work
+
+## arxiv download
+
+```
+wget --user-agent TryToStopMeFromUsingWgetNow https://arxiv.org/pdf/1606.09549.pdf
+```
+
+## selecting gpus
+
+```
+import GPUtil
+if not any(x in os.environ for x in ['CUDA_VISIBLE_DEVICES', 'SLURM_STEP_GPUS', '_CONDOR_AssignedGPUs']):
+    gpu = [str(g) for g in GPUtil.getAvailable(maxMemory=0.2)]
+    assert len(gpu) > 0, f'No available GPUs, {GPUtil.showUtilization()}'
+    print('Using GPU', ','.join(gpu))
+    os.environ['CUDA_VISIBLE_DEVICES'] = ','.join(gpu)
+```
+
+## slurm
+### View history
+```
+sacct -u jozhang --starttime 2014-07-01 --format=User,JobID,Jobname,partition,state,time,start,end,nodelist
+```
+
+### go into job
+```
+srun --jobid=$your_job_id --pty /bin/bash
+```
+
+### see job
+```
+squeue -all
+squeue -O "jobid:8,username:10,mincpus:9,minmemory:11,gres:7,numtasks:6,state:9,timeused:12,nodelist:10"
+/lusr/opt/slurm/bin/slurm-usage
+```
+
+### see user info
+```
+sreport user TopUsage Account=cs
+```
+
+### see gpus 
+```
+sinfo -O NodeList,CPUsState,AllocMem,FreeMem,Memory,Gres
+```
+
+## condor
+### Submit jobs
+```
+condor_submit JOB_NAME.submit
+```
+
+### View jobs
+```
+condor_q -nobatch
+condor_q -held
+```
+
+### Debug
+```
+condor_q -analyze JOB_ID
+condor_q -better-analyze
+condor_status -constrain 'Eldar'
+```
+
+### Remove running jobs
+```
+condor_rm jozhang -constraint 'JobStatus == 2'
+```
+
+## kill python jobs 
+```
+pgrep -u jozhang python | xargs kill   # xargs pipes previous into kill
+```
