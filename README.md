@@ -1,3 +1,9 @@
+## kill some zombies
+
+```bash
+ps | grep python3 | awk '{print $1}' | xargs kill
+```
+
 ## count # files with pattern
 
 ```bash
