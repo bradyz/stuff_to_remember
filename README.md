@@ -1,3 +1,10 @@
+## sshfs
+
+```bash
+sshfs -o IdentityFile=$PATHTOSSH/.ssh/id_rsa $REMOTEUSER@$REMOTEHOST:$REMOTEPATH $LOCALPATH
+sshfs -o IdentityFile=/home/bob/.ssh/id_rsa bobby@blahblah.website.com:/datasets/imagenet /home/bob/imagenet
+```
+
 ## kill some zombies
 
 ```bash
