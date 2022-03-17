@@ -70,6 +70,7 @@ rsync -avz --info=progress2 $SRC $DST
     ]
 }
 ```
+NB: can set `"program"` to your file name to avoid running config on random other file (e.g. model.py)
 
 ## SSH + tmux
 
