@@ -179,3 +179,18 @@ condor_rm jozhang -constraint 'JobStatus == 2'
 ```
 pgrep -u jozhang python | xargs kill   # xargs pipes previous into kill
 ```
+
+## moving around in vscode
+```
+set keybinds for 
+- Focus last editor group
+- Focus call stack
+- Focus debug console
+- Focus terminal
+- breakpoints
+
+vim
+``: jump back
+ma: set mark a at current line
+`a: goto mark
+```
