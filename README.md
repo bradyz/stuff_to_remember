@@ -194,3 +194,8 @@ vim
 ma: set mark a at current line
 `a: goto mark
 ```
+
+## Favorite Links
+
+* Easy Matplotlib subplots with [subplot mosaic](https://matplotlib.org/stable/tutorials/provisional/mosaic.html)
+* [Camera transforms in OpenGL by songho](http://www.songho.ca/opengl/gl_transform.html)
