@@ -1,3 +1,12 @@
+## Pytorch Flags
+
+To help debug certain cuda errors, set this flag
+More discussion at [link](https://discuss.pytorch.org/t/whats-the-meaning-of-this-error-how-can-i-debug-when-i-use-gpu/8052/5)
+
+```bash
+export CUDA_LAUNCH_BLOCKING=1
+```
+
 ## sshfs
 
 ```bash
