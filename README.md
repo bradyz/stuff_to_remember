@@ -202,6 +202,10 @@ vim
 ``: jump back
 ma: set mark a at current line
 `a: goto mark
+
+ctrl+shift+. opens a sidebar with all methods from which you can go to next method
+alt+F5: move to next change (next edit location)
+
 ```
 
 ## Favorite Links
